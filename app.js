@@ -1,1 +1,0 @@
-document.querySelectorAll(".nav a").forEach(a=>{if(a.getAttribute("href")===location.pathname.split("/").pop()||(!location.pathname.split("/").pop()&&a.getAttribute("href")==="index.html")){document.querySelectorAll(".nav a").forEach(x=>x.style.color="#999");a.style.color="#222"}});
