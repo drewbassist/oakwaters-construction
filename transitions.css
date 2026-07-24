@@ -1,0 +1,49 @@
+/* Oakwaters shared page transition
+   Header stays stationary. Only content below the header moves. */
+
+html, body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Header always spans the full browser width and never participates in animation. */
+header,
+.blog-header,
+.site-header {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+
+/* Only this wrapper animates. */
+.page-transition-content {
+  width: 100%;
+  transform: translateX(0);
+  will-change: transform;
+}
+
+.page-transition-content.page-enter {
+  animation: oakwaters-content-enter 520ms cubic-bezier(.22,.61,.36,1) both;
+}
+
+.page-transition-content.page-leave {
+  animation: oakwaters-content-leave 420ms cubic-bezier(.55,.06,.68,.19) both;
+  pointer-events: none;
+}
+
+@keyframes oakwaters-content-enter {
+  from { transform: translateX(100vw); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes oakwaters-content-leave {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100vw); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-content.page-enter,
+  .page-transition-content.page-leave {
+    animation: none !important;
+  }
+}
