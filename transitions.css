@@ -47,3 +47,66 @@ header,
     animation: none !important;
   }
 }
+
+
+/* ===== Unified Oakwaters header ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header,
+.site-header,
+.header {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+
+header {
+  min-height: 225px !important;
+  height: 225px !important;
+  background: #fff !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+header > * {
+  box-sizing: border-box !important;
+}
+
+/* Keep logo and navigation geometry identical on every page */
+header .header-inner,
+header .nav-wrap,
+header .container,
+header > div {
+  width: 100% !important;
+  max-width: 1800px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Search is intentionally removed */
+header form,
+header input[type="search"],
+header input[placeholder="Search..."],
+header .search,
+header .search-box,
+header .site-search,
+header [class*="search"] {
+  display: none !important;
+}
+
+/* Prevent page-specific header/logo sizing */
+header img {
+  max-height: 190px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 800px) {
+  header {
+    height: auto !important;
+    min-height: 150px !important;
+  }
+}
