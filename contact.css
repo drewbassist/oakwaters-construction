@@ -1,0 +1,50 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;color:#30302f;background:#fff}
+
+.contact-header{height:202px;background:#fff}
+.contact-header-inner{width:980px;height:202px;margin:0 auto;position:relative}
+.contact-logo{position:absolute;left:0;top:36px}
+.contact-logo img{display:block;width:375px;height:131px;object-fit:contain}
+.contact-header-right{position:absolute;right:0;top:72px;width:515px}
+.contact-nav{height:45px;display:flex;align-items:center}
+.contact-nav a{height:45px;line-height:45px;padding:0 22px;color:#9e969f;text-decoration:none;font-size:14px;white-space:nowrap}
+.contact-nav a.active,.contact-nav a:hover{color:#30302f}
+.contact-search{margin-left:126px;width:300px;height:45px;border:1px solid #999;background:#f5f4f2;display:flex;align-items:center;gap:10px;padding:0 12px;color:#333;font-size:14px}
+.contact-search-icon{color:#777;font-size:21px}
+
+.contact-main{background:#fff}
+.contact-panel{width:980px;min-height:690px;margin:0 auto;padding-top:116px}
+.contact-panel h1{margin:0 0 82px 32px;font-size:64px;line-height:1;font-weight:700;letter-spacing:0}
+
+.contact-details{width:915px;margin:0 auto}
+.contact-card{width:416px;height:132px;background:#fff;border:6px solid #807f7d;display:grid;grid-template-columns:92px 1px 1fr;align-items:center;margin-bottom:28px}
+.contact-letter{text-align:center;font-size:23px;font-weight:700}
+.contact-divider{height:64px;background:#807f7d}
+.contact-value{padding-left:28px;font-size:16px;white-space:nowrap}
+
+.contact-footer{height:170px;padding-top:50px;color:#8f8e8c;text-align:center;background:#fff}
+.contact-socials{display:flex;justify-content:center;gap:8px}
+.contact-socials img{width:30px;height:30px;object-fit:contain}
+.contact-footer p{font-size:12px;margin:10px 0 0}
+
+@media(max-width:1000px){
+  .contact-header{height:auto}
+  .contact-header-inner{width:100%;height:auto;padding:18px;display:flex;justify-content:space-between;align-items:center}
+  .contact-logo,.contact-header-right{position:static}
+  .contact-logo img{width:260px;height:auto}
+  .contact-header-right{width:auto}
+  .contact-search{display:none}
+  .contact-nav a{padding:0 10px}
+  .contact-panel{width:100%;min-height:600px;padding:80px 25px}
+  .contact-panel h1{margin-left:0}
+  .contact-details{width:100%}
+}
+@media(max-width:700px){
+  .contact-header-inner{display:block}
+  .contact-logo img{margin:0 auto}
+  .contact-nav{justify-content:center;flex-wrap:wrap;height:auto}
+  .contact-panel h1{font-size:46px;margin-bottom:55px}
+  .contact-card{width:100%;grid-template-columns:70px 1px 1fr}
+  .contact-value{padding-left:18px;font-size:14px;white-space:normal}
+}
