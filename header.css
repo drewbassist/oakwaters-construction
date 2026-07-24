@@ -1,0 +1,120 @@
+/* Shared header: identical on every page */
+.site-header {
+  width: 100%;
+  height: 202px;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header .header-inner {
+  width: 980px !important;
+  max-width: calc(100% - 48px) !important;
+  height: 202px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  position: relative !important;
+  display: block !important;
+}
+
+.site-header .brand {
+  position: absolute !important;
+  left: 0 !important;
+  top: 36px !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.site-header .brand img {
+  display: block !important;
+  width: 375px !important;
+  max-width: none !important;
+  height: 131px !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+
+.site-header .header-right {
+  position: absolute !important;
+  right: 0 !important;
+  top: 72px !important;
+  width: 515px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.site-header nav {
+  height: 45px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.site-header nav a {
+  display: block !important;
+  height: 45px !important;
+  line-height: 45px !important;
+  padding: 0 22px !important;
+  margin: 0 !important;
+  color: #9e96a1 !important;
+  text-decoration: none !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  white-space: nowrap !important;
+}
+
+.site-header nav a.active {
+  color: #222 !important;
+}
+
+.site-header form,
+.site-header input,
+.site-header .search,
+.site-header .search-box,
+.site-header .site-search,
+.site-header [class*="search"] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    height: auto;
+    min-height: 170px;
+  }
+  .site-header .header-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 170px;
+    padding: 20px 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+  }
+  .site-header .brand,
+  .site-header .header-right {
+    position: static !important;
+  }
+  .site-header .brand img {
+    width: min(375px, 80vw) !important;
+    height: auto !important;
+  }
+  .site-header .header-right {
+    width: 100% !important;
+    margin-top: 12px !important;
+  }
+  .site-header nav {
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    height: auto !important;
+  }
+  .site-header nav a {
+    padding: 0 14px 0 0 !important;
+  }
+}
