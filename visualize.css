@@ -97,78 +97,121 @@ body {
 
 
 /* ========================================
-   BEFORE / CONCEPT COMPARISON
+   COMPARISON CONTAINER
    ======================================== */
 
 .comparison {
   position: relative;
+
   width: 980px;
   max-width: 100%;
+
   aspect-ratio: 16 / 9;
+
   margin: 0 auto;
+
   overflow: hidden;
+
   background: #efeeea;
 }
 
 
-/* BEFORE IMAGE */
+/* ========================================
+   BEFORE IMAGE
+   ======================================== */
 
 .comparison-before {
   position: absolute;
+
   inset: 0;
+
+  z-index: 1;
+
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: contain;
   object-position: center;
-  z-index: 1;
-}
 
-
-/* CONCEPT OVERLAY */
-
-.comparison-after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 2;
-}
-
-
-/* CONCEPT IMAGE */
-
-.comparison-after img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 200%;
-  height: 100%;
   max-width: none;
-  object-fit: contain;
-  object-position: left center;
 }
 
 
 /* ========================================
-   BEFORE / CONCEPT LABELS
+   CONCEPT IMAGE LAYER
+   ======================================== */
+
+.comparison-after {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  /*
+    Initial position.
+
+    LEFT  = Before
+    RIGHT = Concept
+  */
+
+  clip-path: inset(0 0 0 50%);
+}
+
+
+/* ========================================
+   CONCEPT IMAGE
+   ======================================== */
+
+.comparison-after img {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+
+/* ========================================
+   LABELS
    ======================================== */
 
 .comparison-label {
   position: absolute;
+
   top: 25px;
+
   z-index: 5;
+
   padding: 8px 13px;
-  background: rgba(255, 255, 255, 0.9);
+
+  background: rgba(255, 255, 255, 0.92);
+
   color: #30302f;
+
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+
   letter-spacing: 1px;
+
   text-transform: uppercase;
+
   pointer-events: none;
 }
 
@@ -182,53 +225,86 @@ body {
 
 
 /* ========================================
-   SLIDER DIVIDER
+   DIVIDER
    ======================================== */
 
 .comparison-divider {
   position: absolute;
+
   z-index: 6;
+
   top: 0;
   bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: #fff;
-  transform: translateX(-1px);
-  pointer-events: none;
-}
 
-.comparison-handle {
-  position: absolute;
   left: 50%;
-  top: 50%;
-  width: 52px;
-  height: 52px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
+
+  width: 2px;
+
+  transform: translateX(-1px);
+
   background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  color: #555;
-  font-size: 24px;
-  line-height: 1;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+
+  pointer-events: none;
 }
 
 
 /* ========================================
-   INVISIBLE SLIDER CONTROL
+   SLIDER HANDLE
+   ======================================== */
+
+.comparison-handle {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 52px;
+  height: 52px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  color: #555;
+
+  font-size: 24px;
+  line-height: 1;
+
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.comparison-handle span {
+  display: block;
+}
+
+
+/* ========================================
+   INVISIBLE RANGE CONTROL
    ======================================== */
 
 .comparison-range {
   position: absolute;
+
   z-index: 10;
+
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   margin: 0;
+
   opacity: 0;
+
   cursor: ew-resize;
 }
 
@@ -239,46 +315,59 @@ body {
 
 .possibilities {
   padding: 110px 30px;
+
   background: #f4f3ef;
 }
 
 .possibilities-inner {
   max-width: 980px;
+
   margin: 0 auto;
 }
 
 .possibilities h2 {
   margin: 0 0 25px;
+
   text-align: center;
+
   font-size: 40px;
   line-height: 1.2;
 }
 
 .possibilities-intro {
   max-width: 700px;
+
   margin: 0 auto 75px;
+
   text-align: center;
+
   font-size: 15px;
   line-height: 1.7;
+
   color: #666;
 }
 
 .possibilities-grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   gap: 50px;
 }
 
 .possibilities-grid h3 {
   margin: 0 0 18px;
+
   font-size: 20px;
   line-height: 1.3;
 }
 
 .possibilities-grid p {
   margin: 0;
+
   font-size: 14px;
   line-height: 1.7;
+
   color: #666;
 }
 
@@ -289,25 +378,31 @@ body {
 
 .visualization-note {
   padding: 95px 30px;
+
   background: #fff;
+
   text-align: center;
 }
 
 .visualization-note-inner {
   max-width: 780px;
+
   margin: 0 auto;
 }
 
 .visualization-note h2 {
   margin: 0 0 25px;
+
   font-size: 32px;
   line-height: 1.25;
 }
 
 .visualization-note p {
   margin: 0;
+
   font-size: 14px;
   line-height: 1.8;
+
   color: #666;
 }
 
@@ -318,26 +413,35 @@ body {
 
 .visualize-cta {
   min-height: 290px;
+
   padding: 0 20px;
+
   background: #cdcbc1;
+
   color: #fff;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   text-align: center;
 }
 
 .visualize-cta h2 {
   margin: 0 0 22px;
+
   color: #fff;
+
   font-size: 25px;
   line-height: 1.375;
 }
 
 .visualize-cta p {
   margin: 0;
+
   color: #fff;
+
   font-size: 18px;
   line-height: 1.4;
 }
@@ -347,11 +451,13 @@ body {
 .visualize-cta a:visited,
 .visualize-cta a:active {
   color: #fff;
+
   text-decoration: none;
 }
 
 .visualize-cta a:hover {
   color: #fff;
+
   text-decoration: underline;
 }
 
@@ -376,6 +482,7 @@ body {
 
   .possibilities-grid {
     grid-template-columns: repeat(2, 1fr);
+
     gap: 50px 40px;
   }
 }
@@ -417,7 +524,9 @@ body {
 
   .comparison-label {
     top: 12px;
+
     padding: 6px 9px;
+
     font-size: 10px;
   }
 
@@ -432,6 +541,7 @@ body {
   .comparison-handle {
     width: 44px;
     height: 44px;
+
     font-size: 20px;
   }
 
@@ -449,6 +559,7 @@ body {
 
   .possibilities-grid {
     grid-template-columns: 1fr;
+
     gap: 40px;
   }
 
@@ -462,6 +573,7 @@ body {
 
   .visualize-cta {
     min-height: 240px;
+
     padding: 40px 20px;
   }
 
