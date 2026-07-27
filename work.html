@@ -36,11 +36,12 @@
 
     /* ========================================
        CENTERED PHOTO GRID
+       15% SMALLER
        ======================================== */
 
     .gallery {
-      width: 80% !important;
-      max-width: 1250px !important;
+      width: 68% !important;
+      max-width: 1060px !important;
 
       margin-left: auto !important;
       margin-right: auto !important;
@@ -49,7 +50,11 @@
 
       display: grid !important;
       grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-      gap: 12px !important;
+
+      /* EXACTLY EQUAL SPACE IN BOTH DIRECTIONS */
+      column-gap: 16px !important;
+      row-gap: 16px !important;
+      gap: 16px !important;
 
       position: relative !important;
 
@@ -69,17 +74,18 @@
     }
 
 
-    /* Remove any old pseudo-elements / lines */
+    /* Remove old gallery pseudo-elements */
 
     .gallery::before,
     .gallery::after {
       content: none !important;
       display: none !important;
-      border: 0 !important;
     }
 
 
-    /* Keep every image completely inside its grid cell */
+    /* ========================================
+       IMAGES
+       ======================================== */
 
     .gallery img {
       display: block !important;
@@ -87,9 +93,9 @@
       width: 100% !important;
       max-width: 100% !important;
 
-      height: 280px !important;
-      min-height: 0 !important;
-      max-height: 280px !important;
+      height: 238px !important;
+      min-height: 238px !important;
+      max-height: 238px !important;
 
       object-fit: cover !important;
       object-position: center center !important;
@@ -113,8 +119,7 @@
     }
 
 
-    /* Prevent old work.css rules from making
-       individual items extend outside the grid */
+    /* Kill any old spacing applied by work.css */
 
     .gallery > * {
       min-width: 0 !important;
@@ -125,8 +130,6 @@
 
       border: 0 !important;
       outline: 0 !important;
-
-      overflow: hidden !important;
     }
 
 
@@ -172,15 +175,19 @@
     @media (max-width: 1000px) {
 
       .gallery {
-        width: calc(100% - 40px) !important;
+        width: 80% !important;
         max-width: none !important;
 
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        column-gap: 16px !important;
+        row-gap: 16px !important;
       }
 
       .gallery img {
-        height: 280px !important;
-        max-height: 280px !important;
+        height: 240px !important;
+        min-height: 240px !important;
+        max-height: 240px !important;
       }
 
     }
@@ -197,10 +204,13 @@
         max-width: none !important;
 
         grid-template-columns: 1fr !important;
+
+        row-gap: 16px !important;
       }
 
       .gallery img {
         height: auto !important;
+        min-height: 0 !important;
         max-height: none !important;
       }
 
