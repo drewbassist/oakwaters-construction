@@ -103,3 +103,7 @@ header img {
     transform: none !important;
   }
 }
+/* Space between hero image and kitchen section */
+.hero {
+  margin-bottom: 40px;
+}
