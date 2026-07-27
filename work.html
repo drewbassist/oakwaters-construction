@@ -13,246 +13,9 @@
 
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
-
-  <style>
-
-    /* ========================================
-       WORK PAGE
-       ======================================== */
-
-    .work-page {
-      width: 100% !important;
-      margin: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      overflow: hidden !important;
-    }
-
-    .work-page h1 {
-      width: 100% !important;
-      text-align: center !important;
-    }
-
-
-    /* ========================================
-       CENTERED PHOTO GRID
-       ======================================== */
-
-    .gallery {
-      width: 68% !important;
-      max-width: 1060px !important;
-
-      margin: 0 auto !important;
-      padding: 0 !important;
-
-      display: grid !important;
-      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-
-      /* Equal thin spacing in both directions */
-      gap: 12px !important;
-      column-gap: 12px !important;
-      row-gap: 12px !important;
-
-      align-items: start !important;
-      align-content: start !important;
-
-      position: static !important;
-
-      left: auto !important;
-      right: auto !important;
-      top: auto !important;
-      bottom: auto !important;
-
-      transform: none !important;
-
-      border: 0 !important;
-      outline: 0 !important;
-
-      background: transparent !important;
-      overflow: hidden !important;
-    }
-
-
-    /* Remove old pseudo-elements */
-
-    .gallery::before,
-    .gallery::after {
-      content: none !important;
-      display: none !important;
-    }
-
-
-    /* Remove old spacing from every gallery item */
-
-    .gallery > * {
-      width: 100% !important;
-      min-width: 0 !important;
-      max-width: 100% !important;
-
-      margin: 0 !important;
-      margin-top: 0 !important;
-      margin-right: 0 !important;
-      margin-bottom: 0 !important;
-      margin-left: 0 !important;
-
-      padding: 0 !important;
-
-      border: 0 !important;
-      outline: 0 !important;
-
-      position: static !important;
-
-      left: auto !important;
-      right: auto !important;
-      top: auto !important;
-      bottom: auto !important;
-
-      transform: none !important;
-    }
-
-
-    /* Remove pseudo-elements from individual items */
-
-    .gallery > *::before,
-    .gallery > *::after {
-      content: none !important;
-      display: none !important;
-    }
-
-
-    /* ========================================
-       GALLERY IMAGES
-       ======================================== */
-
-    .gallery img {
-      display: block !important;
-
-      width: 100% !important;
-      max-width: 100% !important;
-
-      height: 238px !important;
-      min-height: 238px !important;
-      max-height: 238px !important;
-
-      margin: 0 !important;
-      margin-top: 0 !important;
-      margin-right: 0 !important;
-      margin-bottom: 0 !important;
-      margin-left: 0 !important;
-
-      padding: 0 !important;
-
-      object-fit: cover !important;
-      object-position: center center !important;
-
-      border: 0 !important;
-      outline: 0 !important;
-
-      position: static !important;
-
-      left: auto !important;
-      right: auto !important;
-      top: auto !important;
-      bottom: auto !important;
-
-      transform: none !important;
-
-      vertical-align: top !important;
-    }
-
-
-    /* ========================================
-       BOTTOM CTA
-       ======================================== */
-
-    .cta {
-      width: 100% !important;
-
-      margin: 0 !important;
-
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-
-      text-align: center !important;
-
-      overflow: hidden !important;
-    }
-
-    .cta h2 {
-      margin: 0 0 25px !important;
-      text-align: center !important;
-    }
-
-    .cta .phone {
-      margin: 0 !important;
-      text-align: center !important;
-    }
-
-    .cta .phone a {
-      color: inherit !important;
-      text-decoration: none !important;
-    }
-
-
-    /* ========================================
-       TABLET
-       ======================================== */
-
-    @media (max-width: 1000px) {
-
-      .gallery {
-        width: 80% !important;
-        max-width: none !important;
-
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-
-        gap: 12px !important;
-        column-gap: 12px !important;
-        row-gap: 12px !important;
-      }
-
-      .gallery img {
-        height: 238px !important;
-        min-height: 238px !important;
-        max-height: 238px !important;
-      }
-
-    }
-
-
-    /* ========================================
-       MOBILE
-       ======================================== */
-
-    @media (max-width: 600px) {
-
-      .gallery {
-        width: calc(100% - 30px) !important;
-        max-width: none !important;
-
-        grid-template-columns: 1fr !important;
-
-        gap: 12px !important;
-        row-gap: 12px !important;
-      }
-
-      .gallery img {
-        height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
-      }
-
-    }
-
-  </style>
-
 </head>
 
-
 <body>
-
 
 <header class="site-header">
 
@@ -284,11 +47,9 @@
 
 <div class="page-transition-content">
 
-
   <main class="work-page">
 
     <h1>Our Work</h1>
-
 
     <div class="gallery">
 
@@ -353,7 +114,6 @@
     </div>
 
   </section>
-
 
 </div><!-- /page-transition-content -->
 
