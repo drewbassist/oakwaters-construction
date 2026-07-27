@@ -29,7 +29,6 @@ header > * {
   box-sizing: border-box !important;
 }
 
-/* Keep logo and navigation geometry identical on every page */
 header .header-inner,
 header .nav-wrap,
 header .container,
@@ -40,7 +39,6 @@ header > div {
   margin-right: auto !important;
 }
 
-/* Search is intentionally removed */
 header form,
 header input[type="search"],
 header input[placeholder="Search..."],
@@ -51,7 +49,6 @@ header [class*="search"] {
   display: none !important;
 }
 
-/* Prevent page-specific header/logo sizing */
 header img {
   max-height: 190px !important;
   width: auto !important;
@@ -65,11 +62,7 @@ header img {
   }
 }
 
-/* ===== Home page scroll-window image effect =====
-   The frames stay in the document layout while the image content
-   has extra vertical crop room for home-parallax.js to move it.
-   No other sections/pages are changed.
-*/
+/* ===== Home scroll-window / parallax effect ===== */
 @media (min-width: 801px) {
   .hero {
     height: min(720px, 46vw);
@@ -78,24 +71,28 @@ header img {
 
   .hero img {
     width: 100%;
-    height: calc(100% + 140px);
+    height: calc(100% + 360px);
+    max-width: none;
     object-fit: cover;
     object-position: center center;
-    transform: translate3d(0, -70px, 0);
+    transform: translate3d(0, -180px, 0);
     will-change: transform;
   }
 
   .intro-image {
+    position: relative;
     height: 650px;
     overflow: hidden;
   }
 
   .intro-image img {
+    display: block;
     width: 100%;
-    height: calc(100% + 140px);
+    height: 1010px;
+    max-width: none;
     object-fit: cover;
     object-position: center center;
-    transform: translate3d(0, -70px, 0);
+    transform: translate3d(0, -180px, 0);
     will-change: transform;
   }
 }
