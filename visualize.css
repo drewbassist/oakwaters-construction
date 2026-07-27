@@ -66,7 +66,7 @@ body {
 }
 
 .project-heading {
-  width: 820px;
+  width: 980px;
   max-width: 100%;
   margin: 0 auto 45px;
 }
@@ -97,13 +97,13 @@ body {
 
 
 /* ========================================
-   BEFORE / CONCEPT COMPARISON
+   COMPARISON FRAME
    ======================================== */
 
 .comparison {
   position: relative;
 
-  width: 820px;
+  width: 980px;
   max-width: 100%;
 
   aspect-ratio: 16 / 9;
@@ -132,13 +132,13 @@ body {
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 
 
 /* ========================================
-   CONCEPT IMAGE CONTAINER
+   CONCEPT LAYER
    ======================================== */
 
 .comparison-after {
@@ -154,6 +154,8 @@ body {
   overflow: hidden;
 
   clip-path: inset(0 0 0 50%);
+
+  pointer-events: none;
 }
 
 
@@ -173,7 +175,7 @@ body {
 
   max-width: none;
 
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 
@@ -215,7 +217,7 @@ body {
 
 
 /* ========================================
-   DIVIDER
+   SLIDER DIVIDER
    ======================================== */
 
 .comparison-divider {
@@ -239,7 +241,7 @@ body {
 
 
 /* ========================================
-   HANDLE
+   SLIDER HANDLE
    ======================================== */
 
 .comparison-handle {
@@ -310,36 +312,47 @@ body {
 
 .possibilities h2 {
   margin: 0 0 25px;
+
   text-align: center;
+
   font-size: 40px;
   line-height: 1.2;
 }
 
 .possibilities-intro {
   max-width: 700px;
+
   margin: 0 auto 75px;
+
   text-align: center;
+
   font-size: 15px;
   line-height: 1.7;
+
   color: #666;
 }
 
 .possibilities-grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   gap: 50px;
 }
 
 .possibilities-grid h3 {
   margin: 0 0 18px;
+
   font-size: 20px;
   line-height: 1.3;
 }
 
 .possibilities-grid p {
   margin: 0;
+
   font-size: 14px;
   line-height: 1.7;
+
   color: #666;
 }
 
@@ -350,25 +363,31 @@ body {
 
 .visualization-note {
   padding: 95px 30px;
+
   background: #fff;
+
   text-align: center;
 }
 
 .visualization-note-inner {
   max-width: 780px;
+
   margin: 0 auto;
 }
 
 .visualization-note h2 {
   margin: 0 0 25px;
+
   font-size: 32px;
   line-height: 1.25;
 }
 
 .visualization-note p {
   margin: 0;
+
   font-size: 14px;
   line-height: 1.8;
+
   color: #666;
 }
 
@@ -379,8 +398,11 @@ body {
 
 .visualize-cta {
   min-height: 290px;
+
   padding: 0 20px;
+
   background: #cdcbc1;
+
   color: #fff;
 
   display: flex;
@@ -393,14 +415,18 @@ body {
 
 .visualize-cta h2 {
   margin: 0 0 22px;
+
   color: #fff;
+
   font-size: 25px;
   line-height: 1.375;
 }
 
 .visualize-cta p {
   margin: 0;
+
   color: #fff;
+
   font-size: 18px;
   line-height: 1.4;
 }
@@ -410,11 +436,13 @@ body {
 .visualize-cta a:visited,
 .visualize-cta a:active {
   color: #fff;
+
   text-decoration: none;
 }
 
 .visualize-cta a:hover {
   color: #fff;
+
   text-decoration: underline;
 }
 
@@ -439,6 +467,7 @@ body {
 
   .possibilities-grid {
     grid-template-columns: repeat(2, 1fr);
+
     gap: 50px 40px;
   }
 }
@@ -480,7 +509,9 @@ body {
 
   .comparison-label {
     top: 12px;
+
     padding: 6px 9px;
+
     font-size: 10px;
   }
 
@@ -495,6 +526,7 @@ body {
   .comparison-handle {
     width: 44px;
     height: 44px;
+
     font-size: 20px;
   }
 
@@ -512,6 +544,7 @@ body {
 
   .possibilities-grid {
     grid-template-columns: 1fr;
+
     gap: 40px;
   }
 
@@ -525,6 +558,7 @@ body {
 
   .visualize-cta {
     min-height: 240px;
+
     padding: 40px 20px;
   }
 
