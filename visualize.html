@@ -22,24 +22,14 @@
 
 <body>
 
-
-<!-- ========================================
-     HEADER
-     ======================================== -->
-
 <header class="site-header">
-
   <div class="header-inner">
 
     <a class="brand" href="index.html">
-      <img
-        src="images/logo.png"
-        alt="Oakwaters Construction Ltd."
-      >
+      <img src="images/logo.png" alt="Oakwaters Construction Ltd.">
     </a>
 
     <div class="header-right">
-
       <nav>
         <a href="index.html">Home</a>
         <a href="work.html">Work</a>
@@ -48,23 +38,15 @@
         <a href="contact.html">Contact</a>
         <a href="blog.html">Blog</a>
       </nav>
-
     </div>
 
   </div>
-
 </header>
 
 
 <div class="page-transition-content">
 
-
 <main>
-
-
-<!-- ========================================
-     INTRO
-     ======================================== -->
 
 <section class="visualize-intro">
 
@@ -88,9 +70,7 @@
 </section>
 
 
-<!-- ========================================
-     PROJECT 1
-     ======================================== -->
+<!-- PROJECT 1 -->
 
 <section class="visualization-project">
 
@@ -106,7 +86,6 @@
     </p>
 
   </div>
-
 
   <div class="comparison" data-comparison>
 
@@ -156,9 +135,7 @@
 </section>
 
 
-<!-- ========================================
-     PROJECT 2
-     ======================================== -->
+<!-- PROJECT 2 -->
 
 <section class="visualization-project alternate">
 
@@ -174,7 +151,6 @@
     </p>
 
   </div>
-
 
   <div class="comparison" data-comparison>
 
@@ -224,9 +200,7 @@
 </section>
 
 
-<!-- ========================================
-     PROJECT 3
-     ======================================== -->
+<!-- PROJECT 3 -->
 
 <section class="visualization-project">
 
@@ -242,7 +216,6 @@
     </p>
 
   </div>
-
 
   <div class="comparison" data-comparison>
 
@@ -292,9 +265,7 @@
 </section>
 
 
-<!-- ========================================
-     PROJECT 4
-     ======================================== -->
+<!-- PROJECT 4 -->
 
 <section class="visualization-project alternate">
 
@@ -310,7 +281,6 @@
     </p>
 
   </div>
-
 
   <div class="comparison" data-comparison>
 
@@ -360,9 +330,7 @@
 </section>
 
 
-<!-- ========================================
-     POSSIBILITIES
-     ======================================== -->
+<!-- POSSIBILITIES -->
 
 <section class="possibilities">
 
@@ -375,54 +343,38 @@
       for your renovation before important design decisions are made.
     </p>
 
-
     <div class="possibilities-grid">
 
       <div>
-
         <h3>Exteriors</h3>
-
         <p>
           Explore siding, masonry, windows, entrances, rooflines
           and architectural details.
         </p>
-
       </div>
 
-
       <div>
-
         <h3>Interiors</h3>
-
         <p>
           Consider new layouts, cabinetry, finishes, materials
           and architectural treatments.
         </p>
-
       </div>
 
-
       <div>
-
         <h3>Additions</h3>
-
         <p>
           Visualize how additional living space might integrate
           with the character of your existing home.
         </p>
-
       </div>
 
-
       <div>
-
         <h3>Outdoor Spaces</h3>
-
         <p>
           Explore landscaping, patios, entrances and other exterior
           improvements as part of the overall project.
         </p>
-
       </div>
 
     </div>
@@ -432,9 +384,7 @@
 </section>
 
 
-<!-- ========================================
-     CONCEPT NOTE
-     ======================================== -->
+<!-- CONCEPT NOTE -->
 
 <section class="visualization-note">
 
@@ -455,9 +405,7 @@
 </section>
 
 
-<!-- ========================================
-     CTA
-     ======================================== -->
+<!-- CTA -->
 
 <section class="visualize-cta">
 
@@ -471,19 +419,13 @@
 
 </section>
 
-
 </main>
 
-
-</div><!-- /page-transition-content -->
+</div>
 
 
 <script src="transitions.js"></script>
 
-
-<!-- ========================================
-     BEFORE / CONCEPT SLIDERS
-     ======================================== -->
 
 <script>
 
@@ -491,17 +433,25 @@ document.querySelectorAll("[data-comparison]").forEach(function(comparison) {
 
   const range = comparison.querySelector(".comparison-range");
   const after = comparison.querySelector(".comparison-after");
+  const afterImage = after.querySelector("img");
   const divider = comparison.querySelector(".comparison-divider");
 
   function updateComparison() {
 
-    const value = range.value;
+    const value = Number(range.value);
 
-    after.style.clipPath =
-      "inset(0 " + (100 - value) + "% 0 0)";
+    after.style.width = value + "%";
+
+    /*
+      The overlay gets narrower as the slider moves,
+      but the concept image itself must remain the same
+      width as the complete comparison area.
+    */
+    if (value > 0) {
+      afterImage.style.width = (10000 / value) + "%";
+    }
 
     divider.style.left = value + "%";
-
   }
 
   range.addEventListener("input", updateComparison);
