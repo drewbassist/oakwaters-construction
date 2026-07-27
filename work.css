@@ -91,17 +91,21 @@ input[type="search"] {
    ======================================== */
 
 .work-page {
+  width: 100%;
   background: #efeeea;
 
-  /* No artificial 1160px height */
   min-height: 0;
 
   padding: 64px 0 80px;
+  margin: 0;
 }
 
 .work-page h1 {
   margin: 0 0 80px;
+  padding: 0;
+
   text-align: center;
+
   font-size: 40px;
   line-height: 1.35;
   font-weight: 700;
@@ -109,17 +113,14 @@ input[type="search"] {
 
 
 /* ========================================
-   PHOTO GRID
+   WORK GALLERY
+
+   269 + 10 + 269 + 10 + 269 = 827px
+
+   Every gutter is exactly 10px.
    ======================================== */
 
 .gallery {
-  /*
-     269 + 10 + 269 + 10 + 269 = 827px
-
-     This means the entire grid has a precise
-     width and can be perfectly centered.
-  */
-
   width: 827px;
   max-width: calc(100% - 40px);
 
@@ -129,14 +130,35 @@ input[type="search"] {
   display: grid;
 
   grid-template-columns: repeat(3, 269px);
-  grid-template-rows: repeat(3, 269px);
 
-  /* EXACT SAME SPACE HORIZONTALLY AND VERTICALLY */
-  gap: 10px;
+  /*
+    Do NOT use the old:
+    grid-template-rows: repeat(3, 316px);
+
+    Each row is now exactly the same
+    height as each image.
+  */
+
+  grid-template-rows: none;
+  grid-auto-rows: 269px;
+
+  column-gap: 10px;
+  row-gap: 10px;
 
   justify-content: center;
   align-content: start;
+  align-items: start;
+
+  border: 0;
+  outline: 0;
+
+  position: static;
 }
+
+
+/* ========================================
+   GALLERY IMAGES
+   ======================================== */
 
 .gallery img {
   display: block;
@@ -144,13 +166,36 @@ input[type="search"] {
   width: 269px;
   height: 269px;
 
+  min-width: 269px;
+  max-width: 269px;
+
+  min-height: 269px;
+  max-height: 269px;
+
   margin: 0;
   padding: 0;
 
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
 
   border: 0;
+  outline: 0;
+
+  position: static;
+  transform: none;
+
+  vertical-align: top;
+}
+
+
+/* Remove anything generated around gallery */
+
+.gallery::before,
+.gallery::after,
+.gallery img::before,
+.gallery img::after {
+  content: none;
+  display: none;
 }
 
 
@@ -159,7 +204,12 @@ input[type="search"] {
    ======================================== */
 
 .cta {
+  width: 100%;
   height: 340px;
+
+  margin: 0;
+  padding: 0;
+
   background: #cdcbc1;
   color: #fff;
 
@@ -169,19 +219,21 @@ input[type="search"] {
   align-items: center;
 
   text-align: center;
-
-  padding: 0;
-  margin: 0;
 }
 
 .cta h2 {
   margin: 0 0 18px;
+  padding: 0;
+
   font-size: 25px;
 }
 
 .cta .phone {
   margin: 0;
+  padding: 0;
+
   font-size: 18px;
+  text-align: center;
 }
 
 .cta .phone a {
@@ -191,12 +243,13 @@ input[type="search"] {
 
 
 /* ========================================
-   OLD FOOTER
+   FOOTER
    ======================================== */
 
 footer {
   height: 170px;
   padding-top: 50px;
+
   color: #8f8e8c;
   text-align: center;
 }
@@ -231,6 +284,7 @@ footer p {
   .header-inner {
     width: 100%;
     height: auto;
+
     padding: 18px;
 
     display: flex;
@@ -258,22 +312,31 @@ footer p {
 
   .work-page {
     min-height: 0;
-    padding-bottom: 60px;
+    padding: 60px 0;
   }
 
   .gallery {
     width: calc(100% - 40px);
+    max-width: none;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: none;
     grid-auto-rows: auto;
 
-    gap: 10px;
+    column-gap: 10px;
+    row-gap: 10px;
   }
 
   .gallery img {
     width: 100%;
     height: auto;
+
+    min-width: 0;
+    max-width: 100%;
+
+    min-height: 0;
+    max-height: none;
+
     aspect-ratio: 1 / 1;
   }
 }
@@ -307,15 +370,24 @@ footer p {
   .gallery {
     width: calc(100% - 30px);
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: none;
+    grid-auto-rows: auto;
 
-    gap: 10px;
+    column-gap: 10px;
+    row-gap: 10px;
   }
 
   .gallery img {
     width: 100%;
     height: auto;
+
+    min-width: 0;
+    max-width: 100%;
+
+    min-height: 0;
+    max-height: none;
+
     aspect-ratio: 1 / 1;
   }
 }
@@ -325,23 +397,19 @@ footer p {
    UNIFIED OAKWATERS HEADER
    ======================================== */
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
 header,
 .site-header,
 .header {
   width: 100% !important;
   max-width: none !important;
+
   box-sizing: border-box !important;
 }
 
 header {
   min-height: 225px !important;
   height: 225px !important;
+
   background: #fff !important;
 
   display: flex !important;
@@ -363,6 +431,9 @@ header > div {
   margin-right: auto !important;
 }
 
+
+/* Search intentionally removed */
+
 header form,
 header input[type="search"],
 header input[placeholder="Search..."],
@@ -373,11 +444,16 @@ header [class*="search"] {
   display: none !important;
 }
 
+
+/* Prevent page-specific logo sizing */
+
 header img {
   max-height: 190px !important;
   width: auto !important;
+
   object-fit: contain !important;
 }
+
 
 @media (max-width: 800px) {
 
