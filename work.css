@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -12,6 +13,11 @@ body {
   color: #2f2f2e;
   background: #fff;
 }
+
+
+/* ========================================
+   HEADER
+   ======================================== */
 
 .site-header {
   height: 202px;
@@ -67,72 +73,126 @@ nav a:hover {
   color: #2f2f2e;
 }
 
-.search-box {
-  margin-left: 126px;
-  width: 300px;
-  height: 45px;
-  border: 1px solid #999;
-  background: #f5f4f2;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 12px;
-  color: #333;
-  font-size: 14px;
+
+/* ========================================
+   SEARCH REMOVED
+   ======================================== */
+
+.search,
+.search-box,
+.site-search,
+input[type="search"] {
+  display: none !important;
 }
 
-.search-icon {
-  color: #777;
-  font-size: 21px;
-}
+
+/* ========================================
+   WORK PAGE
+   ======================================== */
 
 .work-page {
   background: #efeeea;
-  min-height: 1160px;
-  padding: 64px 0 10px;
+
+  /* No artificial 1160px height */
+  min-height: 0;
+
+  padding: 64px 0 80px;
 }
 
 .work-page h1 {
-  margin: 0 0 108px;
+  margin: 0 0 80px;
   text-align: center;
   font-size: 40px;
   line-height: 1.35;
   font-weight: 700;
 }
 
+
+/* ========================================
+   PHOTO GRID
+   ======================================== */
+
 .gallery {
-  width: 969px;
+  /*
+     269 + 10 + 269 + 10 + 269 = 827px
+
+     This means the entire grid has a precise
+     width and can be perfectly centered.
+  */
+
+  width: 827px;
+  max-width: calc(100% - 40px);
+
   margin: 0 auto;
+  padding: 0;
+
   display: grid;
-  grid-template-columns: 316px 317px 316px;
-  grid-template-rows: repeat(3, 316px);
+
+  grid-template-columns: repeat(3, 269px);
+  grid-template-rows: repeat(3, 269px);
+
+  /* EXACT SAME SPACE HORIZONTALLY AND VERTICALLY */
   gap: 10px;
+
+  justify-content: center;
+  align-content: start;
 }
 
 .gallery img {
   display: block;
-  width: 100%;
-  height: 316px;
+
+  width: 269px;
+  height: 269px;
+
+  margin: 0;
+  padding: 0;
+
   object-fit: cover;
+  object-position: center;
+
+  border: 0;
 }
+
+
+/* ========================================
+   CTA
+   ======================================== */
 
 .cta {
   height: 340px;
   background: #cdcbc1;
   color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
-  padding-top: 82px;
+
+  padding: 0;
+  margin: 0;
 }
 
 .cta h2 {
-  margin: 0 0 14px;
+  margin: 0 0 18px;
   font-size: 25px;
 }
 
-.cta p {
+.cta .phone {
   margin: 0;
   font-size: 18px;
 }
+
+.cta .phone a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ========================================
+   OLD FOOTER
+   ======================================== */
 
 footer {
   height: 170px;
@@ -157,7 +217,13 @@ footer p {
   font-size: 12px;
 }
 
+
+/* ========================================
+   TABLET
+   ======================================== */
+
 @media (max-width: 1000px) {
+
   .site-header {
     height: auto;
   }
@@ -166,6 +232,7 @@ footer p {
     width: 100%;
     height: auto;
     padding: 18px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -185,33 +252,39 @@ footer p {
     width: auto;
   }
 
-  .search-box {
-    display: none;
-  }
-
   nav a {
     padding: 0 10px;
   }
 
   .work-page {
     min-height: 0;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
   }
 
   .gallery {
-    width: calc(100% - 30px);
+    width: calc(100% - 40px);
+
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: none;
     grid-auto-rows: auto;
+
+    gap: 10px;
   }
 
   .gallery img {
+    width: 100%;
     height: auto;
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
   }
 }
 
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
 @media (max-width: 700px) {
+
   .header-inner {
     display: block;
   }
@@ -232,17 +305,28 @@ footer p {
   }
 
   .gallery {
-    grid-template-columns: 1fr 1fr;
+    width: calc(100% - 30px);
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+
+    gap: 10px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }
 
 
-/* Search removed */
-.search, .search-box, .site-search, input[type="search"] { display: none !important; }
+/* ========================================
+   UNIFIED OAKWATERS HEADER
+   ======================================== */
 
-
-/* ===== Unified Oakwaters header ===== */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -259,6 +343,7 @@ header {
   min-height: 225px !important;
   height: 225px !important;
   background: #fff !important;
+
   display: flex !important;
   align-items: center !important;
 }
@@ -267,18 +352,17 @@ header > * {
   box-sizing: border-box !important;
 }
 
-/* Keep logo and navigation geometry identical on every page */
 header .header-inner,
 header .nav-wrap,
 header .container,
 header > div {
   width: 100% !important;
   max-width: 1800px !important;
+
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
-/* Search is intentionally removed */
 header form,
 header input[type="search"],
 header input[placeholder="Search..."],
@@ -289,7 +373,6 @@ header [class*="search"] {
   display: none !important;
 }
 
-/* Prevent page-specific header/logo sizing */
 header img {
   max-height: 190px !important;
   width: auto !important;
@@ -297,8 +380,10 @@ header img {
 }
 
 @media (max-width: 800px) {
+
   header {
     height: auto !important;
     min-height: 150px !important;
   }
+
 }
