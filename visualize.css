@@ -97,21 +97,16 @@ body {
 
 
 /* ========================================
-   COMPARISON CONTAINER
+   BEFORE / CONCEPT COMPARISON
    ======================================== */
 
 .comparison {
   position: relative;
-
   width: 980px;
   max-width: 100%;
-
   aspect-ratio: 16 / 9;
-
   margin: 0 auto;
-
   overflow: hidden;
-
   background: #efeeea;
 }
 
@@ -122,7 +117,6 @@ body {
 
 .comparison-before {
   position: absolute;
-
   inset: 0;
 
   z-index: 1;
@@ -132,20 +126,17 @@ body {
   width: 100%;
   height: 100%;
 
-  object-fit: contain;
-  object-position: center;
-
-  max-width: none;
+  object-fit: cover;
+  object-position: center center;
 }
 
 
 /* ========================================
-   CONCEPT IMAGE LAYER
+   CONCEPT IMAGE CONTAINER
    ======================================== */
 
 .comparison-after {
   position: absolute;
-
   inset: 0;
 
   z-index: 2;
@@ -154,13 +145,6 @@ body {
   height: 100%;
 
   overflow: hidden;
-
-  /*
-    Initial position.
-
-    LEFT  = Before
-    RIGHT = Concept
-  */
 
   clip-path: inset(0 0 0 50%);
 }
@@ -172,7 +156,6 @@ body {
 
 .comparison-after img {
   position: absolute;
-
   inset: 0;
 
   display: block;
@@ -182,13 +165,13 @@ body {
 
   max-width: none;
 
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center center;
 }
 
 
 /* ========================================
-   LABELS
+   BEFORE / CONCEPT LABELS
    ======================================== */
 
 .comparison-label {
@@ -225,7 +208,7 @@ body {
 
 
 /* ========================================
-   DIVIDER
+   SLIDER DIVIDER
    ======================================== */
 
 .comparison-divider {
@@ -271,24 +254,19 @@ body {
   align-items: center;
   justify-content: center;
 
-  gap: 6px;
+  gap: 7px;
 
   color: #555;
 
   font-size: 24px;
   line-height: 1;
 
-  box-shadow:
-    0 2px 10px rgba(0, 0, 0, 0.15);
-}
-
-.comparison-handle span {
-  display: block;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 
 /* ========================================
-   INVISIBLE RANGE CONTROL
+   INVISIBLE SLIDER CONTROL
    ======================================== */
 
 .comparison-range {
@@ -417,7 +395,6 @@ body {
   padding: 0 20px;
 
   background: #cdcbc1;
-
   color: #fff;
 
   display: flex;
