@@ -102,21 +102,25 @@ body {
 
 .comparison {
   position: relative;
+
   width: 980px;
   max-width: 100%;
+
   aspect-ratio: 16 / 9;
+
   margin: 0 auto;
+
   overflow: hidden;
+
   background: #efeeea;
 }
 
 
-/* ========================================
-   BEFORE IMAGE
-   ======================================== */
+/* BEFORE IMAGE */
 
 .comparison-before {
   position: absolute;
+
   inset: 0;
 
   z-index: 1;
@@ -126,46 +130,43 @@ body {
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 
 
-/* ========================================
-   CONCEPT IMAGE CONTAINER
-   ======================================== */
+/* CONCEPT IMAGE CONTAINER */
 
 .comparison-after {
   position: absolute;
+
   inset: 0;
 
   z-index: 2;
 
-  width: 100%;
-  height: 100%;
-
   overflow: hidden;
 
-  clip-path: inset(0 0 0 50%);
+  width: 50%;
+  height: 100%;
 }
 
 
-/* ========================================
-   CONCEPT IMAGE
-   ======================================== */
+/* CONCEPT IMAGE */
 
 .comparison-after img {
   position: absolute;
-  inset: 0;
+
+  top: 0;
+  left: 0;
 
   display: block;
 
-  width: 100%;
-  height: 100%;
-
+  width: 980px;
   max-width: none;
 
-  object-fit: cover;
+  height: 100%;
+
+  object-fit: contain;
   object-position: center center;
 }
 
@@ -183,14 +184,13 @@ body {
 
   padding: 8px 13px;
 
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.9);
 
   color: #30302f;
 
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-
   letter-spacing: 1px;
 
   text-transform: uppercase;
@@ -223,17 +223,10 @@ body {
 
   width: 2px;
 
-  transform: translateX(-1px);
-
   background: #fff;
 
   pointer-events: none;
 }
-
-
-/* ========================================
-   SLIDER HANDLE
-   ======================================== */
 
 .comparison-handle {
   position: absolute;
@@ -395,6 +388,7 @@ body {
   padding: 0 20px;
 
   background: #cdcbc1;
+
   color: #fff;
 
   display: flex;
@@ -462,6 +456,10 @@ body {
 
     gap: 50px 40px;
   }
+
+  .comparison-after img {
+    width: calc(100vw - 50px);
+  }
 }
 
 
@@ -497,6 +495,10 @@ body {
 
   .comparison {
     aspect-ratio: 4 / 3;
+  }
+
+  .comparison-after img {
+    width: calc(100vw - 40px);
   }
 
   .comparison-label {
