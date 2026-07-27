@@ -49,7 +49,9 @@
 <main>
 
 
-<!-- INTRO -->
+<!-- ========================================
+     INTRO
+     ======================================== -->
 
 <section class="visualize-intro">
 
@@ -73,7 +75,9 @@
 </section>
 
 
-<!-- PROJECT 1 -->
+<!-- ========================================
+     PROJECT 1
+     ======================================== -->
 
 <section class="visualization-project">
 
@@ -142,7 +146,9 @@
 </section>
 
 
-<!-- PROJECT 2 -->
+<!-- ========================================
+     PROJECT 2
+     ======================================== -->
 
 <section class="visualization-project alternate">
 
@@ -211,7 +217,9 @@
 </section>
 
 
-<!-- PROJECT 3 -->
+<!-- ========================================
+     PROJECT 3
+     ======================================== -->
 
 <section class="visualization-project">
 
@@ -280,7 +288,9 @@
 </section>
 
 
-<!-- PROJECT 4 -->
+<!-- ========================================
+     PROJECT 4
+     ======================================== -->
 
 <section class="visualization-project alternate">
 
@@ -349,7 +359,9 @@
 </section>
 
 
-<!-- POSSIBILITIES -->
+<!-- ========================================
+     POSSIBILITIES
+     ======================================== -->
 
 <section class="possibilities">
 
@@ -419,7 +431,9 @@
 </section>
 
 
-<!-- CONCEPT NOTE -->
+<!-- ========================================
+     CONCEPT NOTE
+     ======================================== -->
 
 <section class="visualization-note">
 
@@ -440,7 +454,9 @@
 </section>
 
 
-<!-- CTA -->
+<!-- ========================================
+     CTA
+     ======================================== -->
 
 <section class="visualize-cta">
 
@@ -457,7 +473,7 @@
 
 </main>
 
-</div><!-- /page-transition-content -->
+</div>
 
 
 <script src="transitions.js"></script>
@@ -467,47 +483,33 @@
 
 document.querySelectorAll("[data-comparison]").forEach(function(comparison) {
 
-  const range =
-    comparison.querySelector(".comparison-range");
-
-  const concept =
-    comparison.querySelector(".comparison-after");
-
-  const divider =
-    comparison.querySelector(".comparison-divider");
-
+  const range = comparison.querySelector(".comparison-range");
+  const after = comparison.querySelector(".comparison-after");
+  const divider = comparison.querySelector(".comparison-divider");
 
   function updateComparison() {
 
-    const position = Number(range.value);
+    const value = Number(range.value);
 
     /*
-      BEFORE stays underneath the entire comparison.
+      Both images remain full-size and stationary.
 
-      CONCEPT also remains full size.
+      The slider only changes how much of the concept
+      image is revealed.
 
-      We simply hide everything on the concept image
-      to the LEFT of the slider.
-
-      Therefore:
-
-      LEFT  = BEFORE
-      RIGHT = CONCEPT
+      value 0   = all concept
+      value 50  = half before / half concept
+      value 100 = all before
     */
 
-    concept.style.clipPath =
-      "inset(0 0 0 " + position + "%)";
+    after.style.clipPath =
+      "inset(0 0 0 " + value + "%)";
 
     divider.style.left =
-      position + "%";
+      value + "%";
   }
 
-
-  range.addEventListener(
-    "input",
-    updateComparison
-  );
-
+  range.addEventListener("input", updateComparison);
 
   updateComparison();
 
