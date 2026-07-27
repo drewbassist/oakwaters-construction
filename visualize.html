@@ -48,6 +48,9 @@
 
 <main>
 
+
+<!-- INTRO -->
+
 <section class="visualize-intro">
 
   <div class="visualize-intro-inner">
@@ -87,12 +90,13 @@
 
   </div>
 
+
   <div class="comparison" data-comparison>
 
     <img
       class="comparison-before"
       src="visualize-assets/project-1-before.jpg"
-      alt="Existing home before renovation"
+      alt=""
     >
 
     <div class="comparison-after">
@@ -104,6 +108,7 @@
 
     </div>
 
+
     <div class="comparison-label label-before">
       Before
     </div>
@@ -111,6 +116,7 @@
     <div class="comparison-label label-after">
       Concept
     </div>
+
 
     <div class="comparison-divider">
 
@@ -120,6 +126,7 @@
       </div>
 
     </div>
+
 
     <input
       class="comparison-range"
@@ -152,6 +159,7 @@
 
   </div>
 
+
   <div class="comparison" data-comparison>
 
     <img
@@ -169,6 +177,7 @@
 
     </div>
 
+
     <div class="comparison-label label-before">
       Before
     </div>
@@ -176,6 +185,7 @@
     <div class="comparison-label label-after">
       Concept
     </div>
+
 
     <div class="comparison-divider">
 
@@ -185,6 +195,7 @@
       </div>
 
     </div>
+
 
     <input
       class="comparison-range"
@@ -217,6 +228,7 @@
 
   </div>
 
+
   <div class="comparison" data-comparison>
 
     <img
@@ -234,6 +246,7 @@
 
     </div>
 
+
     <div class="comparison-label label-before">
       Before
     </div>
@@ -241,6 +254,7 @@
     <div class="comparison-label label-after">
       Concept
     </div>
+
 
     <div class="comparison-divider">
 
@@ -250,6 +264,7 @@
       </div>
 
     </div>
+
 
     <input
       class="comparison-range"
@@ -282,6 +297,7 @@
 
   </div>
 
+
   <div class="comparison" data-comparison>
 
     <img
@@ -299,6 +315,7 @@
 
     </div>
 
+
     <div class="comparison-label label-before">
       Before
     </div>
@@ -306,6 +323,7 @@
     <div class="comparison-label label-after">
       Concept
     </div>
+
 
     <div class="comparison-divider">
 
@@ -315,6 +333,7 @@
       </div>
 
     </div>
+
 
     <input
       class="comparison-range"
@@ -343,38 +362,54 @@
       for your renovation before important design decisions are made.
     </p>
 
+
     <div class="possibilities-grid">
 
       <div>
+
         <h3>Exteriors</h3>
+
         <p>
           Explore siding, masonry, windows, entrances, rooflines
           and architectural details.
         </p>
+
       </div>
 
+
       <div>
+
         <h3>Interiors</h3>
+
         <p>
           Consider new layouts, cabinetry, finishes, materials
           and architectural treatments.
         </p>
+
       </div>
 
+
       <div>
+
         <h3>Additions</h3>
+
         <p>
           Visualize how additional living space might integrate
           with the character of your existing home.
         </p>
+
       </div>
 
+
       <div>
+
         <h3>Outdoor Spaces</h3>
+
         <p>
           Explore landscaping, patios, entrances and other exterior
           improvements as part of the overall project.
         </p>
+
       </div>
 
     </div>
@@ -419,9 +454,10 @@
 
 </section>
 
+
 </main>
 
-</div>
+</div><!-- /page-transition-content -->
 
 
 <script src="transitions.js"></script>
@@ -431,30 +467,47 @@
 
 document.querySelectorAll("[data-comparison]").forEach(function(comparison) {
 
-  const range = comparison.querySelector(".comparison-range");
-  const after = comparison.querySelector(".comparison-after");
-  const afterImage = after.querySelector("img");
-  const divider = comparison.querySelector(".comparison-divider");
+  const range =
+    comparison.querySelector(".comparison-range");
+
+  const concept =
+    comparison.querySelector(".comparison-after");
+
+  const divider =
+    comparison.querySelector(".comparison-divider");
+
 
   function updateComparison() {
 
-    const value = Number(range.value);
-
-    after.style.width = value + "%";
+    const position = Number(range.value);
 
     /*
-      The overlay gets narrower as the slider moves,
-      but the concept image itself must remain the same
-      width as the complete comparison area.
-    */
-    if (value > 0) {
-      afterImage.style.width = (10000 / value) + "%";
-    }
+      BEFORE stays underneath the entire comparison.
 
-    divider.style.left = value + "%";
+      CONCEPT also remains full size.
+
+      We simply hide everything on the concept image
+      to the LEFT of the slider.
+
+      Therefore:
+
+      LEFT  = BEFORE
+      RIGHT = CONCEPT
+    */
+
+    concept.style.clipPath =
+      "inset(0 0 0 " + position + "%)";
+
+    divider.style.left =
+      position + "%";
   }
 
-  range.addEventListener("input", updateComparison);
+
+  range.addEventListener(
+    "input",
+    updateComparison
+  );
+
 
   updateComparison();
 
