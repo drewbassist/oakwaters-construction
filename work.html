@@ -15,61 +15,100 @@
   <link rel="apple-touch-icon" href="favicon.png">
 
   <style>
-    /* Make Work gallery 20% smaller */
+
+    /* ========================================
+       CENTERED WORK GALLERY
+       ======================================== */
+
+    .work-page {
+      width: 100%;
+    }
+
+    .work-page h1 {
+      text-align: center;
+    }
+
     .gallery {
       width: 80% !important;
       max-width: 80% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
+
+      margin: 0 auto !important;
+
+      justify-content: center !important;
+      justify-items: center !important;
+      align-items: center !important;
     }
 
     .gallery img {
+      display: block;
       max-width: 100%;
       height: auto;
+      margin: 0 auto;
     }
 
-    /* Center footer contents */
-    footer .footer-inner {
+
+    /* ========================================
+       BOTTOM CTA
+       ======================================== */
+
+    .cta {
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
       justify-content: center !important;
+
       text-align: center !important;
     }
 
-    footer .footer-inner h2 {
+    .cta h2 {
+      margin-bottom: 25px !important;
+    }
+
+    .cta .phone {
       text-align: center !important;
     }
 
-    footer .phone {
-      text-align: center !important;
-    }
-
-    footer .phone a {
+    .cta .phone a {
       color: inherit;
       text-decoration: none;
     }
 
-    /* Keep gallery wider on small screens */
+
+    /* ========================================
+       MOBILE
+       ======================================== */
+
     @media (max-width: 800px) {
+
       .gallery {
         width: calc(100% - 40px) !important;
         max-width: calc(100% - 40px) !important;
+        margin: 0 auto !important;
       }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
 <header class="site-header">
+
   <div class="header-inner">
 
     <a class="brand" href="index.html">
-      <img src="images/logo.png" alt="Oakwaters Construction Ltd.">
+      <img
+        src="images/logo.png"
+        alt="Oakwaters Construction Ltd."
+      >
     </a>
 
     <div class="header-right">
+
       <nav>
         <a href="index.html">Home</a>
         <a class="active" href="work.html">Work</a>
@@ -77,17 +116,21 @@
         <a href="contact.html">Contact</a>
         <a href="blog.html">Blog</a>
       </nav>
+
     </div>
 
   </div>
+
 </header>
 
 
 <div class="page-transition-content">
 
+
   <main class="work-page">
 
     <h1>Our Work</h1>
+
 
     <div class="gallery">
 
@@ -142,29 +185,24 @@
 
 
   <section class="cta">
-    <h2>Create your dream home.</h2>
-    <p>Tell us about your project today.</p>
+
+    <h2>Let's Discuss Your Next Project</h2>
+
+    <div class="phone">
+      <a href="tel:+19052080552">
+        Call or text: 905.208.0552
+      </a>
+    </div>
+
   </section>
 
-
-  <footer>
-    <div class="footer-inner">
-
-      <h2>Let's Discuss Your Next Project</h2>
-
-      <div class="phone">
-        <a href="tel:+19052080552">
-          Call or text: 905.208.0552
-        </a>
-      </div>
-
-    </div>
-  </footer>
 
 </div><!-- /page-transition-content -->
 
 
 <script src="transitions.js"></script>
 
+
 </body>
+
 </html>
