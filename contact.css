@@ -23,6 +23,24 @@ body{font-family:Arial,Helvetica,sans-serif;color:#30302f;background:#fff}
 .contact-divider{height:64px;background:#807f7d}
 .contact-value{padding-left:28px;font-size:16px;white-space:nowrap}
 
+/* Clickable email & phone */
+.contact-value a,
+.contact-value a:link,
+.contact-value a:visited{
+  color:inherit;
+  text-decoration:none;
+}
+
+.contact-value a:hover,
+.contact-value a:focus{
+  color:inherit;
+  text-decoration:underline;
+}
+
+.contact-value a:active{
+  color:inherit;
+}
+
 .contact-footer{height:170px;padding-top:50px;color:#8f8e8c;text-align:center;background:#fff}
 .contact-socials{display:flex;justify-content:center;gap:8px}
 .contact-socials img{width:30px;height:30px;object-fit:contain}
@@ -40,6 +58,7 @@ body{font-family:Arial,Helvetica,sans-serif;color:#30302f;background:#fff}
   .contact-panel h1{margin-left:0}
   .contact-details{width:100%}
 }
+
 @media(max-width:700px){
   .contact-header-inner{display:block}
   .contact-logo img{margin:0 auto}
@@ -51,67 +70,71 @@ body{font-family:Arial,Helvetica,sans-serif;color:#30302f;background:#fff}
 
 
 /* Search removed */
-.search, .search-box, .site-search, input[type="search"] { display: none !important; }
+.search,
+.search-box,
+.site-search,
+input[type="search"]{
+  display:none !important;
+}
 
 
 /* ===== Unified Oakwaters header ===== */
-html, body {
-  margin: 0;
-  padding: 0;
+
+html,
+body{
+  margin:0;
+  padding:0;
 }
 
 header,
 .site-header,
-.header {
-  width: 100% !important;
-  max-width: none !important;
-  box-sizing: border-box !important;
+.header{
+  width:100% !important;
+  max-width:none !important;
+  box-sizing:border-box !important;
 }
 
-header {
-  min-height: 225px !important;
-  height: 225px !important;
-  background: #fff !important;
-  display: flex !important;
-  align-items: center !important;
+header{
+  min-height:225px !important;
+  height:225px !important;
+  background:#fff !important;
+  display:flex !important;
+  align-items:center !important;
 }
 
-header > * {
-  box-sizing: border-box !important;
+header>*{
+  box-sizing:border-box !important;
 }
 
-/* Keep logo and navigation geometry identical on every page */
 header .header-inner,
 header .nav-wrap,
 header .container,
-header > div {
-  width: 100% !important;
-  max-width: 1800px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+header>div{
+  width:100% !important;
+  max-width:1800px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
 }
 
-/* Search is intentionally removed */
 header form,
 header input[type="search"],
 header input[placeholder="Search..."],
 header .search,
 header .search-box,
 header .site-search,
-header [class*="search"] {
-  display: none !important;
+header [class*="search"]{
+  display:none !important;
 }
 
-/* Prevent page-specific header/logo sizing */
-header img {
-  max-height: 190px !important;
-  width: auto !important;
-  object-fit: contain !important;
+header img{
+  max-height:190px !important;
+  width:auto !important;
+  object-fit:contain !important;
 }
 
-@media (max-width: 800px) {
-  header {
-    height: auto !important;
-    min-height: 150px !important;
+@media(max-width:800px){
+  header{
+    height:auto !important;
+    min-height:150px !important;
   }
 }
