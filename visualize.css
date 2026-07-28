@@ -65,6 +65,16 @@ body {
   background: #efeeea;
 }
 
+.comparison {
+  position: relative;
+  width: 784px;
+  max-width: 100%;
+  height: 496px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--comparison-bg);
+}
+
 .project-heading {
   width: 980px;
   max-width: 100%;
