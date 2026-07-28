@@ -1,3 +1,5 @@
+/* Updated visualize.css */
+
 * {
   box-sizing: border-box;
 }
@@ -14,448 +16,69 @@ body {
   background: #fff;
 }
 
+.visualize-intro{background:#efeeea;padding:32px 30px 34px;}
+.visualize-intro-inner{max-width:850px;margin:0 auto;text-align:center;}
+.visualize-intro h1{margin:0 0 12px;font-size:48px;line-height:1.1;font-weight:700;}
+.intro-lead{margin:0 0 12px;font-size:22px;line-height:1.4;}
+.intro-copy{max-width:720px;margin:0 auto;font-size:15px;line-height:1.5;color:#666;}
 
-/* ========================================
-   INTRO
-   ======================================== */
+.visualization-project{padding:100px 30px 120px;background:#fff;}
+.visualization-project.alternate{background:#efeeea;}
+.project-heading{width:980px;max-width:100%;margin:0 auto 45px;}
+.project-number{display:block;margin-bottom:12px;color:#79bdd6;font-size:13px;letter-spacing:3px;}
+.project-heading h2{margin:0 0 15px;font-size:35px;line-height:1.2;}
+.project-heading p{max-width:650px;margin:0;color:#666;font-size:15px;line-height:1.6;}
 
-.visualize-intro {
-  background: #efeeea;
-  padding: 32px 30px 34px;
-}
-
-.visualize-intro-inner {
-  max-width: 850px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.visualize-intro h1 {
-  margin: 0 0 12px;
-  font-size: 48px;
-  line-height: 1.1;
-  font-weight: 700;
-}
-
-.intro-lead {
-  margin: 0 0 12px;
-  font-size: 22px;
-  line-height: 1.4;
-}
-
-.intro-copy {
-  max-width: 720px;
-  margin: 0 auto;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #666;
-}
-
-
-/* ========================================
-   PROJECTS
-   ======================================== */
-
-.visualization-project {
-  padding: 100px 30px 120px;
-  background: #fff;
-}
-
-.visualization-project.alternate {
-  background: #efeeea;
-}
-
-.project-heading {
-  width: 980px;
-  max-width: 100%;
-  margin: 0 auto 45px;
-}
-
-.project-number {
-  display: block;
-  margin-bottom: 12px;
-  color: #79bdd6;
-  font-size: 13px;
-  line-height: 1;
-  letter-spacing: 3px;
-}
-
-.project-heading h2 {
-  margin: 0 0 15px;
-  font-size: 35px;
-  line-height: 1.2;
-  font-weight: 700;
-}
-
-.project-heading p {
-  max-width: 650px;
-  margin: 0;
-  color: #666;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-
-/* ========================================
-   BEFORE / CONCEPT COMPARISON
-   ======================================== */
-
-.comparison {
-  position: relative;
-  width: 784px;
-  max-width: 100%;
-  aspect-ratio: 980 / 620;
-  margin: 0 auto;
-  overflow: hidden;
-  background: #efeeea;
+.comparison{
+  position:relative;
+  width:784px;
+  max-width:100%;
+  aspect-ratio:980/620;
+  margin:0 auto;
+  overflow:hidden;
+  background:#efeeea;
 }
 
 .comparison-before,
-.comparison-after img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-  object-position: center center;
+.comparison-after,
+.comparison-before img,
+.comparison-after img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
 }
 
-.comparison-before {
-  z-index: 1;
+.comparison-before img,
+.comparison-after img{
+  display:block;
+  object-fit:contain;
+  object-position:center;
 }
 
-.comparison-after {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  overflow: hidden;
-  pointer-events: none;
+.comparison-before{z-index:1;}
+.comparison-after{z-index:2;overflow:hidden;pointer-events:none;}
+
+.comparison-label{position:absolute;top:25px;z-index:5;padding:8px 13px;background:rgba(255,255,255,.9);font-size:12px;font-weight:700;text-transform:uppercase;}
+.label-before{left:25px;}
+.label-after{right:25px;}
+
+.comparison-divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;z-index:6;}
+.comparison-handle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;z-index:7;}
+.comparison-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:10;}
+
+@media (max-width:900px){
+.visualize-intro{padding:28px 25px 30px;}
+.visualize-intro h1{font-size:40px;}
+.visualization-project{padding:75px 25px;}
 }
 
-.comparison-after img {
-  z-index: 2;
-}
-
-
-/* ========================================
-   BEFORE / CONCEPT LABELS
-   ======================================== */
-
-.comparison-label {
-  position: absolute;
-  top: 25px;
-  z-index: 5;
-  padding: 8px 13px;
-  background: rgba(255, 255, 255, 0.9);
-  color: #30302f;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  pointer-events: none;
-}
-
-.label-before {
-  left: 25px;
-}
-
-.label-after {
-  right: 25px;
-}
-
-
-/* ========================================
-   SLIDER DIVIDER
-   ======================================== */
-
-.comparison-divider {
-  position: absolute;
-  z-index: 6;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: #fff;
-  pointer-events: none;
-}
-
-.comparison-handle {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 52px;
-  height: 52px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  color: #555;
-  font-size: 24px;
-  line-height: 1;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-}
-
-
-/* ========================================
-   INVISIBLE SLIDER CONTROL
-   ======================================== */
-
-.comparison-range {
-  position: absolute;
-  z-index: 10;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  opacity: 0;
-  cursor: ew-resize;
-}
-
-
-/* ========================================
-   POSSIBILITIES
-   ======================================== */
-
-.possibilities {
-  padding: 110px 30px;
-  background: #f4f3ef;
-}
-
-.possibilities-inner {
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.possibilities h2 {
-  margin: 0 0 25px;
-  text-align: center;
-  font-size: 40px;
-  line-height: 1.2;
-}
-
-.possibilities-intro {
-  max-width: 700px;
-  margin: 0 auto 75px;
-  text-align: center;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #666;
-}
-
-.possibilities-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
-}
-
-.possibilities-grid h3 {
-  margin: 0 0 18px;
-  font-size: 20px;
-  line-height: 1.3;
-}
-
-.possibilities-grid p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.7;
-  color: #666;
-}
-
-
-/* ========================================
-   CONCEPT NOTE
-   ======================================== */
-
-.visualization-note {
-  padding: 95px 30px;
-  background: #fff;
-  text-align: center;
-}
-
-.visualization-note-inner {
-  max-width: 780px;
-  margin: 0 auto;
-}
-
-.visualization-note h2 {
-  margin: 0 0 25px;
-  font-size: 32px;
-  line-height: 1.25;
-}
-
-.visualization-note p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.8;
-  color: #666;
-}
-
-
-/* ========================================
-   CTA
-   ======================================== */
-
-.visualize-cta {
-  min-height: 290px;
-  padding: 0 20px;
-  background: #cdcbc1;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.visualize-cta h2 {
-  margin: 0 0 22px;
-  color: #fff;
-  font-size: 25px;
-  line-height: 1.375;
-}
-
-.visualize-cta p {
-  margin: 0;
-  color: #fff;
-  font-size: 18px;
-  line-height: 1.4;
-}
-
-.visualize-cta a,
-.visualize-cta a:link,
-.visualize-cta a:visited,
-.visualize-cta a:active {
-  color: #fff;
-  text-decoration: none;
-}
-
-.visualize-cta a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-
-/* ========================================
-   TABLET
-   ======================================== */
-
-@media (max-width: 900px) {
-
-  .visualize-intro {
-    padding: 28px 25px 30px;
-  }
-
-  .visualize-intro h1 {
-    font-size: 40px;
-  }
-
-  .visualization-project {
-    padding: 75px 25px;
-  }
-
-  .possibilities-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px 40px;
-  }
-}
-
-
-/* ========================================
-   MOBILE
-   ======================================== */
-
-@media (max-width: 600px) {
-
-  .visualize-intro {
-    padding: 25px 20px 28px;
-  }
-
-  .visualize-intro h1 {
-    margin-bottom: 10px;
-    font-size: 34px;
-  }
-
-  .intro-lead {
-    margin-bottom: 10px;
-    font-size: 19px;
-  }
-
-  .intro-copy {
-    line-height: 1.5;
-  }
-
-  .visualization-project {
-    padding: 60px 20px 70px;
-  }
-
-  .project-heading {
-    margin-bottom: 30px;
-  }
-
-  .project-heading h2 {
-    font-size: 29px;
-  }
-
-  .comparison-label {
-    top: 12px;
-    padding: 6px 9px;
-    font-size: 10px;
-  }
-
-  .label-before {
-    left: 12px;
-  }
-
-  .label-after {
-    right: 12px;
-  }
-
-  .comparison-handle {
-    width: 44px;
-    height: 44px;
-    font-size: 20px;
-  }
-
-  .possibilities {
-    padding: 75px 25px;
-  }
-
-  .possibilities h2 {
-    font-size: 32px;
-  }
-
-  .possibilities-intro {
-    margin-bottom: 50px;
-  }
-
-  .possibilities-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .visualization-note {
-    padding: 70px 25px;
-  }
-
-  .visualization-note h2 {
-    font-size: 28px;
-  }
-
-  .visualize-cta {
-    min-height: 240px;
-    padding: 40px 20px;
-  }
-
-  .visualize-cta h2 {
-    font-size: 23px;
-  }
-
-  .visualize-cta p {
-    font-size: 17px;
-  }
+@media (max-width:600px){
+.visualize-intro{padding:25px 20px 28px;}
+.visualize-intro h1{font-size:34px;}
+.visualization-project{padding:60px 20px 70px;}
+.comparison-label{top:12px;padding:6px 9px;font-size:10px;}
+.label-before{left:12px;}
+.label-after{right:12px;}
+.comparison-handle{width:44px;height:44px;}
 }
