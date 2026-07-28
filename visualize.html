@@ -487,19 +487,17 @@ document.querySelectorAll("[data-comparison]").forEach(function(comparison) {
   const after = comparison.querySelector(".comparison-after");
   const divider = comparison.querySelector(".comparison-divider");
 
+  const beforeLabel = comparison.querySelector(".label-before");
+  const conceptLabel = comparison.querySelector(".label-after");
+
+
   function updateComparison() {
 
     const value = Number(range.value);
 
     /*
-      Both images remain full-size and stationary.
-
-      The slider only changes how much of the concept
-      image is revealed.
-
-      value 0   = all concept
-      value 50  = half before / half concept
-      value 100 = all before
+      IMAGE / SLIDER BEHAVIOR
+      UNCHANGED
     */
 
     after.style.clipPath =
@@ -507,7 +505,35 @@ document.querySelectorAll("[data-comparison]").forEach(function(comparison) {
 
     divider.style.left =
       value + "%";
+
+
+    /*
+      LABEL BEHAVIOR
+
+      0   = concept only
+      100 = before only
+      Between = both labels
+    */
+
+    if (value <= 1) {
+
+      beforeLabel.style.visibility = "hidden";
+      conceptLabel.style.visibility = "visible";
+
+    } else if (value >= 99) {
+
+      beforeLabel.style.visibility = "visible";
+      conceptLabel.style.visibility = "hidden";
+
+    } else {
+
+      beforeLabel.style.visibility = "visible";
+      conceptLabel.style.visibility = "visible";
+
+    }
+
   }
+
 
   range.addEventListener("input", updateComparison);
 
