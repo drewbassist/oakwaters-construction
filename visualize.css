@@ -99,12 +99,11 @@ body {
 /* ========================================
    BEFORE / CONCEPT COMPARISON
    ======================================== */
-
 .comparison {
   position: relative;
-  width: 784px;
+  width: 784px;      /* or 840px if you want them slightly larger */
   max-width: 100%;
-  aspect-ratio: 980 / 620;
+  height: 496px;     /* exactly 80% of 620px */
   margin: 0 auto;
   overflow: hidden;
   background: #efeeea;
