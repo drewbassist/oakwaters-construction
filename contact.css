@@ -146,3 +146,6 @@ header img{
     min-height:150px !important;
   }
 }
+
+/* Plain-text contact details retain their original visual styling. */
+.contact-value span { color:#30302f; text-decoration:none; }
