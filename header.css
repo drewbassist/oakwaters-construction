@@ -173,3 +173,28 @@ body {
     padding: 0 14px 0 0 !important;
   }
 }
+
+
+/* Oakwaters: keep navigation clear of the logo at all desktop widths. */
+@media (min-width: 901px) {
+  .site-header .header-inner { width: min(1380px, calc(100% - 48px)) !important; max-width: calc(100% - 48px) !important; display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 26px !important; }
+  .site-header .brand { position: static !important; flex: 0 0 320px !important; }
+  .site-header .header-right { position: static !important; width: auto !important; min-width: 0 !important; flex: 1 1 auto !important; }
+  .site-header nav { justify-content: flex-end !important; gap: clamp(8px, 1.5vw, 24px) !important; }
+  .site-header nav a { padding: 0 !important; font-size: clamp(12px, 1vw, 14px) !important; }
+  .site-header nav .oakwaters-instagram-link { display: inline-flex !important; align-items: center !important; flex: 0 0 auto !important; }
+}
+@media (min-width: 901px) and (max-width: 1100px) {
+  .site-header .brand { flex-basis: 250px !important; }
+  .site-header .brand img { width: 250px !important; }
+  .site-header .header-inner { gap: 16px !important; }
+  .site-header nav { gap: 10px !important; }
+}
+@media (max-width: 900px) {
+  .site-header .header-inner { box-sizing: border-box !important; }
+  .site-header .header-right { min-width: 0 !important; }
+  .site-header nav .oakwaters-instagram-link { display: inline-flex !important; align-items: center !important; }
+}
+/* Footer Instagram link remains visible beneath existing contact details. */
+.oakwaters-instagram-footer a { display: inline-flex; align-items: center; gap: 8px; color: inherit; text-decoration: none; }
+.oakwaters-instagram-footer a:hover { text-decoration: underline; }
