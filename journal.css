@@ -34,3 +34,20 @@
 .journal-shell:has(.journal-grid) .journal-card small{padding-bottom:22px}
 @media(max-width:900px){.journal-shell:has(.journal-grid) .journal-grid{grid-template-columns:1fr}}
 @media(max-width:540px){.journal-shell:has(.journal-grid) .journal-hero{min-height:340px}.journal-shell:has(.journal-grid) .journal-hero>div{padding:45px 22px}.journal-shell:has(.journal-grid) .journal-card a{display:block}.journal-shell:has(.journal-grid) .journal-card img{height:215px;min-height:0}.journal-shell:has(.journal-grid) .journal-card .cat,.journal-shell:has(.journal-grid) .journal-card h3,.journal-shell:has(.journal-grid) .journal-card p,.journal-shell:has(.journal-grid) .journal-card small{margin-left:20px;margin-right:20px}.journal-shell:has(.journal-grid) .journal-card small{display:block}}
+
+/* Journal index card sizing: fixed, balanced rows on desktop.
+   Scoped to index only; individual article pages remain untouched. */
+@media (min-width:901px){
+  .journal-shell:has(.journal-grid) .journal-grid{align-items:stretch;grid-auto-rows:248px}
+  .journal-shell:has(.journal-grid) .journal-card{height:248px;min-height:0}
+  .journal-shell:has(.journal-grid) .journal-card a{height:248px;min-height:0;grid-template-rows:auto auto auto 1fr;overflow:hidden}
+  .journal-shell:has(.journal-grid) .journal-card img{height:248px;min-height:0;max-height:248px}
+  .journal-shell:has(.journal-grid) .journal-card .cat{margin-top:16px;margin-bottom:6px}
+  .journal-shell:has(.journal-grid) .journal-card h3{font-size:clamp(17px,1.35vw,21px);line-height:1.18;margin-bottom:7px}
+  .journal-shell:has(.journal-grid) .journal-card p{font-size:13px;line-height:1.4;margin-bottom:6px}
+  .journal-shell:has(.journal-grid) .journal-card small{font-size:11px;padding-bottom:12px}
+}
+@media (min-width:541px) and (max-width:900px){
+  .journal-shell:has(.journal-grid) .journal-card a{min-height:220px}
+  .journal-shell:has(.journal-grid) .journal-card img{min-height:220px;max-height:280px}
+}
