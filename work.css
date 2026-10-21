@@ -463,3 +463,12 @@ header img {
   }
 
 }
+
+/* Quiet, secondary portfolio presentation. */
+.work-page{background:#f6f5f2;padding:42px 0 60px}
+.work-page h1{font-size:30px;font-weight:600;color:#555752;margin-bottom:32px}
+.work-page .gallery{width:752px;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;gap:14px}
+.work-page .project-card{margin:0;min-width:0}
+.work-page .gallery img{width:100%;height:auto;aspect-ratio:1/1;min-width:0;max-width:100%;min-height:0;max-height:none;filter:saturate(.78);opacity:.91}
+.work-page .project-card figcaption{font-size:12px;line-height:1.45}
+@media(max-width:600px){.work-page .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.work-page h1{font-size:26px}}

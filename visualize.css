@@ -370,3 +370,16 @@ body {
 .comparison{width:1040px;max-width:100%;height:auto;aspect-ratio:784/496;border-radius:12px;box-shadow:0 14px 38px rgba(24,30,34,.12)}.comparison-label{top:18px;padding:10px 14px;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.09)}.label-before{left:18px}.label-after{right:18px}.comparison-handle{width:64px;height:64px;border:2px solid white;box-shadow:0 4px 22px rgba(0,0,0,.26);font-size:28px}.comparison-divider{width:3px;box-shadow:0 0 5px rgba(0,0,0,.25)}.comparison-range:focus-visible{opacity:.16;outline:3px solid #277da4;outline-offset:-4px}
 .possibilities{padding:70px 26px}.possibilities-intro{margin-bottom:40px}.possibilities-grid{gap:26px}.concept-disclaimer{max-width:860px;margin:0 auto;padding:28px 24px;font-size:13px;line-height:1.6;text-align:center;color:#666}.visualize-cta{padding:58px 24px}.visualize-cta-subtitle{margin:14px auto 20px}.visualize-consult-button{display:inline-block;padding:14px 26px;background:white;color:#273b46;border-radius:6px;text-decoration:none;font-weight:700;margin:4px 0 14px}.visualize-consult-button:hover{background:#e7f0f3}
 @media(max-width:700px){.visualize-intro{padding:42px 20px 36px}.visualize-steps{grid-template-columns:1fr;gap:8px;margin-top:24px}.visualize-steps>div{justify-content:flex-start;padding:12px 18px}.visualization-project,.visualization-project.alternate{padding:42px 16px 48px}.project-heading{margin-bottom:20px}.comparison{width:100%;height:auto;aspect-ratio:784/496;border-radius:9px}.comparison-handle{width:48px;height:48px;font-size:21px}.comparison-label{top:10px;padding:7px 9px;font-size:10px}.label-before{left:10px}.label-after{right:10px}.possibilities{padding:48px 20px}.visualize-cta{padding:44px 20px}}
+
+/* Compact two-column project gallery; existing comparison interaction preserved. */
+.visualization-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;max-width:1120px;margin:0 auto;padding:44px 24px 65px;align-items:start}
+.visualization-grid .visualization-project,.visualization-grid .visualization-project.alternate{padding:0;background:transparent;min-width:0}
+.visualization-grid .project-heading{width:auto;max-width:100%;margin:0 0 18px;min-height:132px}
+.visualization-grid .project-number{margin-bottom:9px}
+.visualization-grid .project-heading h2{font-size:clamp(21px,2vw,27px);margin-bottom:9px}
+.visualization-grid .project-heading p{font-size:14px;line-height:1.5;max-width:100%}
+.visualization-grid .comparison{width:100%;height:auto;aspect-ratio:784/496;border-radius:9px}
+.visualization-grid .comparison-handle{width:44px;height:44px;font-size:20px}
+.visualization-grid .comparison-label{top:10px;padding:7px 9px;font-size:10px}
+.visualization-grid .label-before{left:10px}.visualization-grid .label-after{right:10px}
+@media(max-width:700px){.visualization-grid{grid-template-columns:1fr;gap:36px;padding:35px 18px 48px}.visualization-grid .project-heading{min-height:0;margin-bottom:15px}}
