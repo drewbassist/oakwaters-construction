@@ -1,0 +1,14 @@
+{
+  "name": "oakwaters-construction",
+  "version": "1.0.0",
+  "description": "Oakwaters Construction website",
+  "scripts": {
+    "build": "echo 'Static site - no build step required'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1"
+  }
+}

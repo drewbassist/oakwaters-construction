@@ -33,4 +33,5 @@
 </div><!-- /page-transition-content -->
 <script src="transitions.js"></script>
 <script>document.querySelectorAll('.journal-filters button').forEach(function(btn){btn.addEventListener('click',function(){const category=btn.dataset.category;document.querySelectorAll('.journal-filters button').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));document.querySelectorAll('.journal-card').forEach(card=>{card.hidden=category==='All'?false:category==='Renovation'?card.dataset.category==='Excavation':card.dataset.category!==category;});});});</script>  <script defer src="/_vercel/insights/script.js"></script>
+<script src="analytics.js"></script>
 </body></html>
