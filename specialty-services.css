@@ -16,3 +16,7 @@ body.svc-page.masonry-page .svc-hero:before{background:linear-gradient(90deg,rgb
 /* Wide backyard hero compositions: override portrait hero backgrounds only. */
 body.svc-page.saunas-page .svc-hero:before{background:linear-gradient(90deg,rgba(11,27,32,.98) 0%,rgba(11,27,32,.88) 29%,rgba(11,27,32,.1) 65%,transparent 90%),url('images/saunas/hero-wide.jpg') center 55% / cover no-repeat;}
 body.svc-page.masonry-page .svc-hero:before{background:linear-gradient(90deg,rgba(11,27,32,.98) 0%,rgba(11,27,32,.88) 29%,rgba(11,27,32,.1) 65%,transparent 90%),url('images/masonry/hero-wide.jpg') center 55% / cover no-repeat;}
+
+/* Clean, text-free panoramic hero images. Original page text remains HTML. */
+body.svc-page.saunas-page .svc-hero:before{background:linear-gradient(90deg,rgba(11,27,32,.85) 0%,rgba(11,27,32,.58) 34%,rgba(11,27,32,.03) 72%),url('images/saunas/hero-clean.jpg') center center / cover no-repeat;}
+body.svc-page.masonry-page .svc-hero:before{background:linear-gradient(90deg,rgba(11,27,32,.85) 0%,rgba(11,27,32,.58) 34%,rgba(11,27,32,.03) 72%),url('images/masonry/hero-clean.jpg') center center / cover no-repeat;}
