@@ -12,3 +12,7 @@ body.svc-page .svc-hero-inner {z-index:1;}
 /* Outdoor backyard hero scenes, limited to the two specialty pages. */
 body.svc-page.saunas-page .svc-hero:before{background:linear-gradient(90deg,rgba(11,27,32,.92) 0%,rgba(11,27,32,.65) 38%,rgba(11,27,32,.08) 85%),url('images/saunas/hero-backyard.jpg') center 54% / cover no-repeat;}
 body.svc-page.masonry-page .svc-hero:before{background:linear-gradient(90deg,rgba(11,27,32,.92) 0%,rgba(11,27,32,.65) 38%,rgba(11,27,32,.08) 85%),url('images/masonry/hero-backyard.jpg') center 54% / cover no-repeat;}
+
+/* Wide backyard hero compositions: override portrait hero backgrounds only. */
+body.svc-page.saunas-page .svc-hero:before{background:linear-gradient(90deg,rgba(11,27,32,.98) 0%,rgba(11,27,32,.88) 29%,rgba(11,27,32,.1) 65%,transparent 90%),url('images/saunas/hero-wide.jpg') center 55% / cover no-repeat;}
+body.svc-page.masonry-page .svc-hero:before{background:linear-gradient(90deg,rgba(11,27,32,.98) 0%,rgba(11,27,32,.88) 29%,rgba(11,27,32,.1) 65%,transparent 90%),url('images/masonry/hero-wide.jpg') center 55% / cover no-repeat;}
