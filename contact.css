@@ -149,3 +149,17 @@ header img{
 
 /* Plain-text contact details retain their original visual styling. */
 .contact-value span { color:#30302f; text-decoration:none; }
+
+/* Contact content positioning and responsive single-line heading */
+@media (min-width: 1001px) {
+  .contact-panel { padding-top: 52px; min-height: 570px; }
+  .contact-panel h1 { margin-bottom: 48px; font-size: clamp(40px, 4.2vw, 64px); white-space: nowrap; }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .contact-panel { padding-top: 48px; min-height: 520px; }
+  .contact-panel h1 { margin-bottom: 45px; font-size: clamp(35px, 5.1vw, 52px); white-space: nowrap; }
+}
+@media (max-width: 700px) {
+  .contact-panel { padding: 35px 20px 55px; min-height: 0; }
+  .contact-panel h1 { margin: 0 0 32px; font-size: clamp(30px, 7vw, 44px); line-height: 1.1; white-space: normal; }
+}
