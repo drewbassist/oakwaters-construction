@@ -1,2 +1,35 @@
 /* Standalone Oakwaters service pages; uses shared site header. */
 :root{--svc-ink:#253c43;--svc-muted:#5d6c70;--svc-accent:#83b6c5;--svc-paper:#f6f5f1}*{box-sizing:border-box}body.svc-page{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--svc-ink);background:#fff}.svc-hero{position:relative;overflow:hidden;background:#20383c;color:#fff;min-height:520px;display:flex;align-items:center}.svc-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 75% 35%,rgba(207,160,100,.35),transparent 40%),repeating-linear-gradient(110deg,transparent 0 44px,rgba(255,255,255,.025) 45px 47px),linear-gradient(110deg,#182c31,#49646a)}.masonry-page .svc-hero:before{background:radial-gradient(ellipse at 78% 40%,rgba(183,148,111,.36),transparent 43%),repeating-linear-gradient(0deg,transparent 0 34px,rgba(255,255,255,.06) 35px 37px),linear-gradient(115deg,#1c3037,#59605d)}.svc-hero-inner{position:relative;max-width:1240px;width:90%;margin:auto;padding:90px 0}.svc-eyebrow,.svc-kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#a8d6df}.svc-hero h1{font-size:clamp(62px,9vw,116px);letter-spacing:-.055em;line-height:.95;margin:22px 0}.svc-hero p{font-size:clamp(18px,2vw,24px);line-height:1.55;max-width:650px}.svc-button{display:inline-block;margin-top:20px;background:#a4d2dd;color:#19323a;text-decoration:none;padding:16px 23px;font-weight:700;border-radius:3px}.svc-intro{max-width:1000px;margin:80px auto;text-align:center;padding:0 25px}.svc-intro h2{font-size:clamp(31px,4vw,48px);letter-spacing:-.035em;margin:15px 0}.svc-intro p{font-size:19px;line-height:1.75;color:var(--svc-muted)}.svc-grid{max-width:1320px;margin:0 auto 90px;padding:0 25px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.svc-card{background:var(--svc-paper);overflow:hidden}.svc-visual{height:210px;position:relative;overflow:hidden;background:linear-gradient(135deg,#a1a59a,#344e50)}.svc-visual:before{content:"";position:absolute;inset:24px 19%;border:12px solid rgba(243,222,185,.72);box-shadow:inset 0 0 0 5px rgba(40,50,48,.2);transform:perspective(450px) rotateY(-8deg)}.svc-visual:after{content:"";position:absolute;bottom:20px;right:16%;height:70px;width:46px;background:linear-gradient(110deg,#5b5c56,#afb2a7);border-radius:6px}.svc-visual span{position:absolute;top:16px;left:20px;color:#fff;font-size:13px;font-weight:700;letter-spacing:.15em;z-index:1}.svc-visual.wood{background:repeating-linear-gradient(90deg,#9b7957 0 20px,#aa8863 21px 23px)}.svc-visual.winter{background:linear-gradient(150deg,#d9e4e8 0 45%,#8d9c9b 46% 65%,#eff2f0 66%)}.svc-visual.brick{background:repeating-linear-gradient(0deg,#8b6357 0 27px,#ded4c5 28px 31px)}.svc-visual.conversion{background:linear-gradient(135deg,#4b625e,#c2a47b)}.svc-visual.addition{background:linear-gradient(130deg,#718d86,#c4a77c)}.svc-visual.weekend{background:linear-gradient(120deg,#263f42,#b78657)}.svc-visual.stone{background:linear-gradient(135deg,#797b71,#c4c0b1)}.svc-visual.chimney{background:repeating-linear-gradient(0deg,#80665a 0 27px,#d4c4b5 28px 31px)}.svc-visual.entry{background:linear-gradient(150deg,#b2b5aa,#6c766d)}.svc-visual.outdoor{background:linear-gradient(145deg,#4a6253,#aaa391)}.svc-visual.restoration{background:linear-gradient(130deg,#837f71,#c0b49d)}.svc-copy{padding:30px}.svc-copy .svc-kicker{color:#5d8b9a}.svc-copy h3{font-size:25px;letter-spacing:-.02em;margin:12px 0}.svc-copy p{font-size:16px;line-height:1.7;color:var(--svc-muted);margin:0}.svc-note{max-width:1100px;margin:0 auto 85px;padding:30px 36px;border-left:4px solid #8dbcc9;background:#f4f7f7;line-height:1.7}.svc-note h2{margin-top:0}.svc-cta{background:#223a41;color:#fff;text-align:center;padding:80px 24px}.svc-cta h2{font-size:clamp(32px,4vw,52px);margin:0 0 14px}.svc-cta p{font-size:18px;line-height:1.7;max-width:760px;margin:0 auto}.svc-footer{text-align:center;padding:32px 16px;color:#65777c;font-size:13px}.svc-footer a{color:inherit}@media(max-width:1000px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.svc-grid{grid-template-columns:1fr}.svc-hero{min-height:430px}.svc-hero-inner{padding:65px 0}.svc-intro{margin:60px auto}.svc-note{margin:0 24px 60px}.svc-visual{height:200px}}
+
+
+/* Image and layout update for Saunas and Masonry only. */
+.svc-page .svc-hero {
+  background-image: linear-gradient(90deg,rgba(14,31,35,.94) 0%,rgba(14,31,35,.75) 33%,rgba(14,31,35,.12) 100%),url("images/saunas/hero.jpg");
+  background-position: center, right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.svc-page.masonry-page .svc-hero {
+  background-image: linear-gradient(90deg,rgba(14,31,35,.94) 0%,rgba(14,31,35,.75) 33%,rgba(14,31,35,.12) 100%),url("images/masonry/hero.jpg");
+}
+.svc-page .svc-grid {
+  max-width: 1350px;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 24px;
+}
+.svc-page .svc-card { overflow: hidden; }
+.svc-page .svc-photo {
+  width: 100%;
+  height: 235px;
+  display: block;
+  object-fit: cover;
+  background: #d3d7d5;
+}
+@media(max-width:900px) {
+  .svc-page .svc-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:620px) {
+  .svc-page .svc-grid { grid-template-columns:1fr; }
+  .svc-page .svc-photo { height:245px; }
+  .svc-page .svc-hero { background-position: center,right center; }
+}
